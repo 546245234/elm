@@ -73,19 +73,6 @@
       }
     },
     props: ['restaurant'],
-    methods:{
-      gotoDetail(id){
-        router.push(`/detail/${id}/`);
-      }
-    },
-    filters:{
-      cn_distance (dis) {
-      return dis>=1000?`${(dis/1000).toFixed(2)}km`:`${dis}m`;
-      },
-      cn_time (time) {
-        return time<60?`${time}分钟`:`${Math.floor(time/60)}小时 ${time%60}分钟`;
-      }
-    }
  }
 </script>
 <style type="text/css">
