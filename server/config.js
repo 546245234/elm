@@ -2,8 +2,8 @@ module.exports={
 	//Database
 	DB_HOST:'localhost',
 	DB_PORT:3306,
-	DB_user:'root',
-	DB_pass:'',
+	DB_USER:'root',
+	DB_PASS:'123456',
 	DB_NAME:'elm',
 	PORT:8090
 }
