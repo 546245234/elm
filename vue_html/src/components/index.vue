@@ -154,7 +154,7 @@
      推荐商家
     </div>
     <section class="shoplist">
-      <ListItem v-for="data in arr" :key="data.restaurant_id" :restaurant="data"></ListItem>
+      <listItem v-for="data in arr" :key="data.restaurant_id" :restaurant="data"></listItem>
     </section>
     <footer class="index-wrapper_1Rsz2pX">
      <div class="index-footer_Gtduid_">
@@ -180,22 +180,27 @@
 </template>
 
 <script>
-import ListItem from '@/components/list-item'
+import listItem from '@/components/list-item'
 
 export default {
-  name: 'index',
   data(){
-    return{
-        arr:[]
+    return {
+      arr: []
+    };
+  },
+  methods: {
+    async loadPage(page=0){
+      return (await this.axios.get(`restaurant/${page}/8/`)).data;
     }
   },
-  components:{
-    ListItem
+  components: {listItem},
+  async mounted(){
+    this.arr=await this.loadPage(0);
   }
 }
 </script>
 
-<style>
+<style lang="css">
 *,::after,::before {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
