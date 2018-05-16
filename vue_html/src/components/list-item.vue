@@ -86,6 +86,10 @@ export default {
     },
     cn_time (time) {
       return time<60?`${time}分钟`:`${Math.floor(time/60)}小时 ${time%60}分钟`;
+    },
+    img_cut(imgPath){
+      var str = imgPath.replace(/jpeg/gi,'.jpeg');
+      return str;
     }
   }
 }

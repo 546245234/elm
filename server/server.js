@@ -9,6 +9,7 @@ const server = new koa();
 server.listen(config.PORT);
 
 server.use(async (ctx,next)=>{
+	ctx.set({'Access-Control-Allow-Origin':'*'});//设置通用请求头，解决跨域
 	ctx.user_id = 'dfsdt43r3ewewerfhdft45';
 
 	await next();
