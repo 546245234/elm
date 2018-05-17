@@ -25,12 +25,12 @@
      <div class="mint-swipe-items-wrap">
       <div class="mint-swipe-item" style="">
        <section class="toptoon">
-        <img src="img/64044fb6df771e9cb42196ae3eeeejpeg.jpeg" />
+        <img src="static/img/64044fb6df771e9cb42196ae3eeeejpeg.jpeg" />
        </section>
       </div>
       <div class="mint-swipe-item is-active" style="">
        <section class="toptoon">
-        <img src="img//db8e07bf6216b37bee4ea2aaf708djpeg.jpeg" />
+        <img src="static/img/db8e07bf6216b37bee4ea2aaf708djpeg.jpeg" />
        </section>
       </div>
      </div>
@@ -45,59 +45,59 @@
        <div class="mint-swipe-item is-active">
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/a867c870b22bc74c87c348b75528djpeg.jpeg" />
+          <img src="static/img/a867c870b22bc74c87c348b75528djpeg.jpeg" />
           <!---->
          </div><span class="title">美食</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/185f7259ebda19e16123884a60ef2jpeg.jpeg" />
+          <img src="static/img/185f7259ebda19e16123884a60ef2jpeg.jpeg" />
           <!---->
          </div><span class="title">晚餐</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/ef32751cb3b72d783f764f0f2c722jpeg.jpeg" />
+          <img src="static/img/ef32751cb3b72d783f764f0f2c722jpeg.jpeg" />
           <!---->
          </div><span class="title">商超便利</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/d20d49e5029281b9b73db1c5ec6f9jpeg.jpeg" />
+          <img src="static/img/d20d49e5029281b9b73db1c5ec6f9jpeg.jpeg" />
           <!---->
          </div><span class="title">果蔬生鲜</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/b02bd836411c016935d258b300cfejpeg.jpeg" />
+          <img src="static/img/b02bd836411c016935d258b300cfejpeg.jpeg" />
           <!---->
          </div><span class="title">大牌5折</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/af108e256ebc9f02db599592ae655jpeg.jpeg" />
+          <img src="static/img/af108e256ebc9f02db599592ae655jpeg.jpeg" />
           <!---->
          </div><span class="title">医药健康</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/c888acb2c8ba9e0c813f36ec9e90ajpeg.jpeg" />
+          <img src="static/img/c888acb2c8ba9e0c813f36ec9e90ajpeg.jpeg" />
           <!---->
          </div><span class="title">浪漫鲜花</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/b7ba9547aa700bd20d0420e1794a8jpeg.jpeg" />
+          <img src="static/img/b7ba9547aa700bd20d0420e1794a8jpeg.jpeg" />
           <!---->
          </div><span class="title">麻辣烫</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/ec21096d528b7cfd23cdd894f01c6jpeg.jpeg" />
+          <img src="static/img/ec21096d528b7cfd23cdd894f01c6jpeg.jpeg" />
           <!---->
          </div><span class="title">地方菜系</span></a>
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/235761e50d391445f021922b71789jpeg.jpeg" />
+          <img src="static/img/235761e50d391445f021922b71789jpeg.jpeg" />
           <!---->
          </div><span class="title">披萨意面</span></a>
        </div>
        <div class="mint-swipe-item">
         <a href="javascript:" role="button">
          <div class="container">
-          <img src="img/6f2631288a44ec177204e05cbcb93jpeg.jpeg" />
+          <img src="static/img/6f2631288a44ec177204e05cbcb93jpeg.jpeg" />
           <!---->
          </div><span class="title">地方小吃</span></a>
        </div>
