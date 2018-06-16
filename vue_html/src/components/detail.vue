@@ -1,499 +1,205 @@
 <template lang="html">
-  <div class="app-2zj-m_1" v-if="restaurant">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
-     <defs>
-      <symbol viewbox="0 0 60 60" id="close.22a2874">
-       <g fill="none" fill-rule="evenodd" opacity=".8" transform="translate(3 3)">
-        <path fill="#FFF" d="M27 25.384l9.697-9.698a1.143 1.143 0 1 1 1.617 1.617L28.616 27l9.698 9.697a1.143 1.143 0 1 1-1.617 1.617L27 28.616l-9.697 9.698a1.143 1.143 0 1 1-1.617-1.617L25.384 27l-9.698-9.697a1.143 1.143 0 1 1 1.617-1.617L27 25.384z"></path>
-        <circle cx="27" cy="27" r="26.5" stroke="#FFF"></circle>
-       </g>
-      </symbol>
-     </defs>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
-     <defs>
-      <symbol viewbox="0 0 60 10" id="star-actived.d4c54d1">
-       <defs>
-        <lineargradient id="star-actived.d4c54d1_a" x1="0%" y1="50%" y2="50%">
-         <stop offset="0%" stop-color="#FFDE00"></stop>
-         <stop offset="100%" stop-color="#FFB000"></stop>
-        </lineargradient>
-       </defs>
-       <path fill="url(#star-actived.d4c54d1_a)" fill-rule="evenodd" d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z"></path>
-      </symbol>
-      <symbol viewbox="0 0 60 10" id="star-gray.cc081b9">
-       <path fill="#EEE" fill-rule="evenodd" d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z"></path>
-      </symbol>
-     </defs>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
-     <defs>
-      <symbol viewbox="0 0 60 60" id="close.22a2874">
-       <g fill="none" fill-rule="evenodd" opacity=".8" transform="translate(3 3)">
-        <path fill="#FFF" d="M27 25.384l9.697-9.698a1.143 1.143 0 1 1 1.617 1.617L28.616 27l9.698 9.697a1.143 1.143 0 1 1-1.617 1.617L27 28.616l-9.697 9.698a1.143 1.143 0 1 1-1.617-1.617L25.384 27l-9.698-9.697a1.143 1.143 0 1 1 1.617-1.617L27 25.384z"></path>
-        <circle cx="27" cy="27" r="26.5" stroke="#FFF"></circle>
-       </g>
-      </symbol>
-     </defs>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
-     <defs>
-      <symbol viewbox="0 0 32 32" id="success">
-       <path fill="#FEF0CA" fill-rule="nonzero" d="M16 32C7.17 32 0 24.83 0 16S7.17 0 16 0s16 7.17 16 16-7.17 16-16 16zm-2.074-9.719c.533 0 1.067-.177 1.481-.592l7.941-7.94c.83-.83.83-2.134 0-2.964a2.075 2.075 0 0 0-2.963 0l-6.518 6.519-2.311-2.311c-.83-.83-2.134-.83-2.904 0-.83.83-.83 2.133 0 2.903l3.792 3.793c.415.415.949.592 1.482.592z"></path>
-      </symbol>
-      <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 640 64" id="arc-cover">
-       <defs>
-        <lineargradient id="arc-cover_a" x1="100%" x2="0%" y1="50%" y2="50%">
-         <stop offset="0%" stop-opacity=".05"></stop>
-         <stop offset="49.809%" stop-opacity=".1"></stop>
-         <stop offset="100%" stop-opacity=".05"></stop>
-        </lineargradient>
-        <lineargradient id="arc-cover_d" x1="100%" x2="1.25%" y1="50%" y2="50%">
-         <stop offset="0%" stop-color="#DC1E36"></stop>
-         <stop offset="100%" stop-color="#FD4E4C"></stop>
-        </lineargradient>
-        <path id="arc-cover_c" d="M0 13c86.885 32.667 193.219 49 319 49s232.781-16.333 321-49v360c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V13z"></path>
-        <filter id="arc-cover_b" width="107.3%" height="112.2%" x="-3.7%" y="-6.6%" filterunits="objectBoundingBox">
-         <feoffset dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
-         <fegaussianblur in="shadowOffsetOuter1" result="shadowBlurOuter1" stddeviation="7.5"></fegaussianblur>
-         <fecolormatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></fecolormatrix>
-        </filter>
-       </defs>
-       <g fill="none" fill-rule="evenodd">
-        <path fill="url(#arc-cover_a)" d="M0 10c86.885 30.667 193.219 46 319 46s232.781-15.333 321-46v313c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V10z"></path>
-        <use fill="#000" filter="url(#arc-cover_b)" xlink:href="#arc-cover_c"></use>
-        <use fill="url(#arc-cover_d)" xlink:href="#arc-cover_c"></use>
-       </g>
-      </symbol>
-      <symbol viewbox="0 0 547 987" id="arrow-right">
-       <path d="M0 931.973l51.2 54.613 494.933-494.933L51.2.133 0 51.333l440.32 440.32L0 931.973z"></path>
-      </symbol>
-      <symbol viewbox="0 0 20 32" id="arrow-left">
-       <path fill="#fff" d="M16.552 5.633l-2.044-2.044L2.243 15.854l12.265 12.557 2.044-2.044L6.331 15.854z"></path>
-      </symbol>
-      <symbol viewbox="0 0 1024 1024" id="res-x">
-       <path fill-rule="evenodd" d="M480.518 512L8.377 984.141c-8.853 8.853-8.777 22.871-.083 31.565 8.754 8.754 22.825 8.656 31.565-.083L512 543.482l472.141 472.141c8.853 8.853 22.871 8.777 31.565.083 8.754-8.754 8.656-22.825-.083-31.565L543.482 512l472.141-472.141c8.853-8.853 8.777-22.871.083-31.565-8.754-8.754-22.825-8.656-31.565.083L512 480.518 39.859 8.377C31.006-.476 16.988-.4 8.294 8.294c-8.754 8.754-8.656 22.825.083 31.565L480.518 512z" class="path1 fill-color3"></path>
-      </symbol>
-      <symbol viewbox="0 0 8 12" id="svip-down">
-       <path fill="#F2DD7D" fill-rule="nonzero" d="M2.07 0v6.018H0l4 5.459 4-5.459H5.93V0H2.07z"></path>
-      </symbol>
-      <symbol viewbox="0 0 10 8" id="svip-crown">
-       <path fill="#F2DD7D" fill-rule="evenodd" d="M7.11 2.688L5.143.072a.177.177 0 0 0-.286 0L2.89 2.69a.709.709 0 0 1-.991.152L.286 1.662a.177.177 0 0 0-.253.044.193.193 0 0 0-.03.14L.97 7.505a.37.37 0 0 0 .287.302c1.261.259 6.238.259 7.48 0a.37.37 0 0 0 .285-.301l.975-5.67a.187.187 0 0 0-.147-.218.177.177 0 0 0-.137.032L8.104 2.838a.709.709 0 0 1-.994-.15z"></path>
-      </symbol>
-      <symbol viewbox="0 0 13 10" id="svip-icon">
-       <defs>
-        <lineargradient id="svip-icon_a" x1="100%" x2="0%" y1="50%" y2="50%">
-         <stop offset="0%" stop-color="#FDBD05"></stop>
-         <stop offset="100%" stop-color="#FFDB72"></stop>
-        </lineargradient>
-       </defs>
-       <path fill="url(#svip-icon_a)" fill-rule="evenodd" d="M9.354 3.36L6.894.09a.222.222 0 0 0-.357 0l-2.46 3.273a.886.886 0 0 1-1.24.19L.823 2.076a.222.222 0 0 0-.316.055.24.24 0 0 0-.038.177l1.21 7.07c.032.19.174.34.358.378 1.576.324 7.797.324 9.35.001a.462.462 0 0 0 .356-.377l1.219-7.088a.234.234 0 0 0-.183-.272.22.22 0 0 0-.172.04l-2.012 1.486a.886.886 0 0 1-1.241-.187z"></path>
-      </symbol>
-      <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 24 24" id="gray-close">
-       <defs>
-        <path id="gray-close_a" d="M13.132 12l6.47-6.47a.75.75 0 0 0-1.061-1.06l-6.47 6.47-6.47-6.47a.75.75 0 0 0-1.06 1.06L11.01 12l-.072.071.071.071-6.47 6.47a.75.75 0 0 0 1.061 1.06l6.47-6.47 6.47 6.47a.75.75 0 0 0 1.06-1.06l-6.47-6.47.072-.07-.071-.072z"></path>
-       </defs>
-       <g fill="none" fill-rule="evenodd">
-        <use fill="#000" fill-opacity=".54" fill-rule="nonzero" xlink:href="#gray-close_a"></use>
-        <path d="M0 0h24v24H0z"></path>
-       </g>
-      </symbol>
-      <symbol viewbox="0 0 32 32" id="success">
-       <path fill="#FEF0CA" fill-rule="nonzero" d="M16 32C7.17 32 0 24.83 0 16S7.17 0 16 0s16 7.17 16 16-7.17 16-16 16zm-2.074-9.719c.533 0 1.067-.177 1.481-.592l7.941-7.94c.83-.83.83-2.134 0-2.964a2.075 2.075 0 0 0-2.963 0l-6.518 6.519-2.311-2.311c-.83-.83-2.134-.83-2.904 0-.83.83-.83 2.133 0 2.903l3.792 3.793c.415.415.949.592 1.482.592z"></path>
-      </symbol>
-     </defs>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0;visibility:hidden">
-     <defs>
-      <symbol viewbox="0 0 44 44" id="cart-add">
-       <path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm0 42C11 42 2 33 2 22S11 2 22 2s20 9 20 20-9 20-20 20z" clip-rule="evenodd"></path>
-       <path fill-rule="evenodd" d="M32 20c1.1 0 2 .9 2 2s-.9 2-2 2H12c-1.1 0-2-.9-2-2s.9-2 2-2h20z" clip-rule="evenodd"></path>
-      </symbol>
-      <symbol viewbox="0 0 44 44" id="cart-minus">
-       <path fill="none" d="M0 0h44v44H0z"></path>
-       <path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path>
-      </symbol>
-      <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 15 15" id="cart-remove">
-       <defs>
-        <path id="cart-remove_a" d="M0 15h13V0H0z"></path>
-       </defs>
-       <g fill="none" fill-rule="evenodd" transform="translate(1)">
-        <path fill="#979797" d="M7.05 15h-5.5c-.303 0-.55-.26-.55-.583V5.091c0-.322.246-.583.55-.583.304 0 .55.26.55.583v8.743h4.95c1.032 0 2-.426 2.728-1.2A4.18 4.18 0 0 0 10.9 9.735l-.03-7.15c0-.323.245-.585.548-.586h.003c.302 0 .548.26.55.58L12 9.732a5.374 5.374 0 0 1-1.442 3.724C9.622 14.451 8.376 15 7.05 15z"></path>
-        <path fill="#979797" d="M12.458 3H.542C.242 3 0 2.776 0 2.5S.243 2 .542 2h11.916c.3 0 .542.224.542.5s-.243.5-.542.5"></path>
-        <mask id="cart-remove_b" fill="#fff">
-         <use xlink:href="#cart-remove_a"></use>
-        </mask>
-        <path fill="#979797" d="M5 2h3V1H5v1zm3.464 1H4.536C4.24 3 4 2.776 4 2.5v-2c0-.276.24-.5.536-.5h3.928C8.76 0 9 .224 9 .5v2c0 .276-.24.5-.536.5z" mask="url(#cart-remove_b)"></path>
-       </g>
-      </symbol>
-      <symbol viewbox="0 0 14 16" id="cart">
-       <path fill="#FFF" fill-rule="evenodd" d="M12.364 2.998H2.088L1.816.687a.455.455 0 0 0-.478-.431L.431.303A.454.454 0 0 0 0 .78l1.256 10.893c.006.293.011 1.325.933 1.325h9.546a.455.455 0 0 0 .455-.454v-.881a.454.454 0 0 0-.455-.455H3.05l-.11-.937h8.606c.998 0 1.889-.724 1.989-1.616l.455-4.04c.1-.893-.628-1.617-1.626-1.617zm-.45 4.245c-.075.669-.317 1.212-1.066 1.212H2.727L2.3 4.812h8.821c.749 0 1.065.543.99 1.212l-.197 1.219zM2.416 15.79a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm9.092 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-      </symbol>
-      <symbol viewbox="0 0 7 5" id="vip-icon">
-       <defs>
-        <lineargradient id="vip-icon_a" x1="50%" x2="50%" y1="100%" y2="-8.227%">
-         <stop offset="0%" stop-color="#FFE571"></stop>
-         <stop offset="100%" stop-color="#FFFAE4"></stop>
-        </lineargradient>
-       </defs>
-       <path fill="url(#vip-icon_a)" fill-rule="evenodd" d="M6.262 3.002L4.5 1 2.737 3.002 1.154 2.1a.1.1 0 0 0-.148.101l.544 3.714a.1.1 0 0 0 .1.086h5.7a.1.1 0 0 0 .099-.085L7.994 2.2a.1.1 0 0 0-.148-.101l-1.584.903z" transform="translate(-1 -1)"></path>
-      </symbol>
-      <symbol viewbox="0 0 13 13" id="icon-warn">
-       <g fill="none" fill-rule="evenodd">
-        <circle cx="6.5" cy="6.5" r="6.5" fill="#FF5339"></circle>
-        <path fill="#FFF" d="M6 3h1v5H6zM6 9h1v1H6z"></path>
-       </g>
-      </symbol>
-     </defs>
-    </svg>
+  <transition name="fadeRight">
+	<div class="app-2zj-m_1" v-if="restaurant">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+		<defs>
+		<symbol viewbox="0 0 60 60" id="close.22a2874">
+		<g fill="none" fill-rule="evenodd" opacity=".8" transform="translate(3 3)">
+			<path fill="#FFF" d="M27 25.384l9.697-9.698a1.143 1.143 0 1 1 1.617 1.617L28.616 27l9.698 9.697a1.143 1.143 0 1 1-1.617 1.617L27 28.616l-9.697 9.698a1.143 1.143 0 1 1-1.617-1.617L25.384 27l-9.698-9.697a1.143 1.143 0 1 1 1.617-1.617L27 25.384z"></path>
+			<circle cx="27" cy="27" r="26.5" stroke="#FFF"></circle>
+		</g>
+		</symbol>
+		</defs>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+		<defs>
+		<symbol viewbox="0 0 60 10" id="star-actived.d4c54d1">
+		<defs>
+			<lineargradient id="star-actived.d4c54d1_a" x1="0%" y1="50%" y2="50%">
+			<stop offset="0%" stop-color="#FFDE00"></stop>
+			<stop offset="100%" stop-color="#FFB000"></stop>
+			</lineargradient>
+		</defs>
+		<path fill="url(#star-actived.d4c54d1_a)" fill-rule="evenodd" d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z"></path>
+		</symbol>
+		<symbol viewbox="0 0 60 10" id="star-gray.cc081b9">
+		<path fill="#EEE" fill-rule="evenodd" d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z"></path>
+		</symbol>
+		</defs>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+		<defs>
+		<symbol viewbox="0 0 60 60" id="close.22a2874">
+		<g fill="none" fill-rule="evenodd" opacity=".8" transform="translate(3 3)">
+			<path fill="#FFF" d="M27 25.384l9.697-9.698a1.143 1.143 0 1 1 1.617 1.617L28.616 27l9.698 9.697a1.143 1.143 0 1 1-1.617 1.617L27 28.616l-9.697 9.698a1.143 1.143 0 1 1-1.617-1.617L25.384 27l-9.698-9.697a1.143 1.143 0 1 1 1.617-1.617L27 25.384z"></path>
+			<circle cx="27" cy="27" r="26.5" stroke="#FFF"></circle>
+		</g>
+		</symbol>
+		</defs>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+		<defs>
+		<symbol viewbox="0 0 32 32" id="success">
+		<path fill="#FEF0CA" fill-rule="nonzero" d="M16 32C7.17 32 0 24.83 0 16S7.17 0 16 0s16 7.17 16 16-7.17 16-16 16zm-2.074-9.719c.533 0 1.067-.177 1.481-.592l7.941-7.94c.83-.83.83-2.134 0-2.964a2.075 2.075 0 0 0-2.963 0l-6.518 6.519-2.311-2.311c-.83-.83-2.134-.83-2.904 0-.83.83-.83 2.133 0 2.903l3.792 3.793c.415.415.949.592 1.482.592z"></path>
+		</symbol>
+		<symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 640 64" id="arc-cover">
+		<defs>
+			<lineargradient id="arc-cover_a" x1="100%" x2="0%" y1="50%" y2="50%">
+			<stop offset="0%" stop-opacity=".05"></stop>
+			<stop offset="49.809%" stop-opacity=".1"></stop>
+			<stop offset="100%" stop-opacity=".05"></stop>
+			</lineargradient>
+			<lineargradient id="arc-cover_d" x1="100%" x2="1.25%" y1="50%" y2="50%">
+			<stop offset="0%" stop-color="#DC1E36"></stop>
+			<stop offset="100%" stop-color="#FD4E4C"></stop>
+			</lineargradient>
+			<path id="arc-cover_c" d="M0 13c86.885 32.667 193.219 49 319 49s232.781-16.333 321-49v360c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V13z"></path>
+			<filter id="arc-cover_b" width="107.3%" height="112.2%" x="-3.7%" y="-6.6%" filterunits="objectBoundingBox">
+			<feoffset dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+			<fegaussianblur in="shadowOffsetOuter1" result="shadowBlurOuter1" stddeviation="7.5"></fegaussianblur>
+			<fecolormatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></fecolormatrix>
+			</filter>
+		</defs>
+		<g fill="none" fill-rule="evenodd">
+			<path fill="url(#arc-cover_a)" d="M0 10c86.885 30.667 193.219 46 319 46s232.781-15.333 321-46v313c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V10z"></path>
+			<use fill="#000" filter="url(#arc-cover_b)" xlink:href="#arc-cover_c"></use>
+			<use fill="url(#arc-cover_d)" xlink:href="#arc-cover_c"></use>
+		</g>
+		</symbol>
+		<symbol viewbox="0 0 547 987" id="arrow-right">
+		<path d="M0 931.973l51.2 54.613 494.933-494.933L51.2.133 0 51.333l440.32 440.32L0 931.973z"></path>
+		</symbol>
+		<symbol viewbox="0 0 20 32" id="arrow-left">
+		<path fill="#fff" d="M16.552 5.633l-2.044-2.044L2.243 15.854l12.265 12.557 2.044-2.044L6.331 15.854z"></path>
+		</symbol>
+		<symbol viewbox="0 0 1024 1024" id="res-x">
+		<path fill-rule="evenodd" d="M480.518 512L8.377 984.141c-8.853 8.853-8.777 22.871-.083 31.565 8.754 8.754 22.825 8.656 31.565-.083L512 543.482l472.141 472.141c8.853 8.853 22.871 8.777 31.565.083 8.754-8.754 8.656-22.825-.083-31.565L543.482 512l472.141-472.141c8.853-8.853 8.777-22.871.083-31.565-8.754-8.754-22.825-8.656-31.565.083L512 480.518 39.859 8.377C31.006-.476 16.988-.4 8.294 8.294c-8.754 8.754-8.656 22.825.083 31.565L480.518 512z" class="path1 fill-color3"></path>
+		</symbol>
+		<symbol viewbox="0 0 8 12" id="svip-down">
+		<path fill="#F2DD7D" fill-rule="nonzero" d="M2.07 0v6.018H0l4 5.459 4-5.459H5.93V0H2.07z"></path>
+		</symbol>
+		<symbol viewbox="0 0 10 8" id="svip-crown">
+		<path fill="#F2DD7D" fill-rule="evenodd" d="M7.11 2.688L5.143.072a.177.177 0 0 0-.286 0L2.89 2.69a.709.709 0 0 1-.991.152L.286 1.662a.177.177 0 0 0-.253.044.193.193 0 0 0-.03.14L.97 7.505a.37.37 0 0 0 .287.302c1.261.259 6.238.259 7.48 0a.37.37 0 0 0 .285-.301l.975-5.67a.187.187 0 0 0-.147-.218.177.177 0 0 0-.137.032L8.104 2.838a.709.709 0 0 1-.994-.15z"></path>
+		</symbol>
+		<symbol viewbox="0 0 13 10" id="svip-icon">
+		<defs>
+			<lineargradient id="svip-icon_a" x1="100%" x2="0%" y1="50%" y2="50%">
+			<stop offset="0%" stop-color="#FDBD05"></stop>
+			<stop offset="100%" stop-color="#FFDB72"></stop>
+			</lineargradient>
+		</defs>
+		<path fill="url(#svip-icon_a)" fill-rule="evenodd" d="M9.354 3.36L6.894.09a.222.222 0 0 0-.357 0l-2.46 3.273a.886.886 0 0 1-1.24.19L.823 2.076a.222.222 0 0 0-.316.055.24.24 0 0 0-.038.177l1.21 7.07c.032.19.174.34.358.378 1.576.324 7.797.324 9.35.001a.462.462 0 0 0 .356-.377l1.219-7.088a.234.234 0 0 0-.183-.272.22.22 0 0 0-.172.04l-2.012 1.486a.886.886 0 0 1-1.241-.187z"></path>
+		</symbol>
+		<symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 24 24" id="gray-close">
+		<defs>
+			<path id="gray-close_a" d="M13.132 12l6.47-6.47a.75.75 0 0 0-1.061-1.06l-6.47 6.47-6.47-6.47a.75.75 0 0 0-1.06 1.06L11.01 12l-.072.071.071.071-6.47 6.47a.75.75 0 0 0 1.061 1.06l6.47-6.47 6.47 6.47a.75.75 0 0 0 1.06-1.06l-6.47-6.47.072-.07-.071-.072z"></path>
+		</defs>
+		<g fill="none" fill-rule="evenodd">
+			<use fill="#000" fill-opacity=".54" fill-rule="nonzero" xlink:href="#gray-close_a"></use>
+			<path d="M0 0h24v24H0z"></path>
+		</g>
+		</symbol>
+		<symbol viewbox="0 0 32 32" id="success">
+		<path fill="#FEF0CA" fill-rule="nonzero" d="M16 32C7.17 32 0 24.83 0 16S7.17 0 16 0s16 7.17 16 16-7.17 16-16 16zm-2.074-9.719c.533 0 1.067-.177 1.481-.592l7.941-7.94c.83-.83.83-2.134 0-2.964a2.075 2.075 0 0 0-2.963 0l-6.518 6.519-2.311-2.311c-.83-.83-2.134-.83-2.904 0-.83.83-.83 2.133 0 2.903l3.792 3.793c.415.415.949.592 1.482.592z"></path>
+		</symbol>
+		</defs>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0;visibility:hidden">
+		<defs>
+		<symbol viewbox="0 0 44 44" id="cart-add">
+		<path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm0 42C11 42 2 33 2 22S11 2 22 2s20 9 20 20-9 20-20 20z" clip-rule="evenodd"></path>
+		<path fill-rule="evenodd" d="M32 20c1.1 0 2 .9 2 2s-.9 2-2 2H12c-1.1 0-2-.9-2-2s.9-2 2-2h20z" clip-rule="evenodd"></path>
+		</symbol>
+		<symbol viewbox="0 0 44 44" id="cart-minus">
+		<path fill="none" d="M0 0h44v44H0z"></path>
+		<path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path>
+		</symbol>
+		<symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 15 15" id="cart-remove">
+		<defs>
+			<path id="cart-remove_a" d="M0 15h13V0H0z"></path>
+		</defs>
+		<g fill="none" fill-rule="evenodd" transform="translate(1)">
+			<path fill="#979797" d="M7.05 15h-5.5c-.303 0-.55-.26-.55-.583V5.091c0-.322.246-.583.55-.583.304 0 .55.26.55.583v8.743h4.95c1.032 0 2-.426 2.728-1.2A4.18 4.18 0 0 0 10.9 9.735l-.03-7.15c0-.323.245-.585.548-.586h.003c.302 0 .548.26.55.58L12 9.732a5.374 5.374 0 0 1-1.442 3.724C9.622 14.451 8.376 15 7.05 15z"></path>
+			<path fill="#979797" d="M12.458 3H.542C.242 3 0 2.776 0 2.5S.243 2 .542 2h11.916c.3 0 .542.224.542.5s-.243.5-.542.5"></path>
+			<mask id="cart-remove_b" fill="#fff">
+			<use xlink:href="#cart-remove_a"></use>
+			</mask>
+			<path fill="#979797" d="M5 2h3V1H5v1zm3.464 1H4.536C4.24 3 4 2.776 4 2.5v-2c0-.276.24-.5.536-.5h3.928C8.76 0 9 .224 9 .5v2c0 .276-.24.5-.536.5z" mask="url(#cart-remove_b)"></path>
+		</g>
+		</symbol>
+		<symbol viewbox="0 0 14 16" id="cart">
+		<path fill="#FFF" fill-rule="evenodd" d="M12.364 2.998H2.088L1.816.687a.455.455 0 0 0-.478-.431L.431.303A.454.454 0 0 0 0 .78l1.256 10.893c.006.293.011 1.325.933 1.325h9.546a.455.455 0 0 0 .455-.454v-.881a.454.454 0 0 0-.455-.455H3.05l-.11-.937h8.606c.998 0 1.889-.724 1.989-1.616l.455-4.04c.1-.893-.628-1.617-1.626-1.617zm-.45 4.245c-.075.669-.317 1.212-1.066 1.212H2.727L2.3 4.812h8.821c.749 0 1.065.543.99 1.212l-.197 1.219zM2.416 15.79a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm9.092 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+		</symbol>
+		<symbol viewbox="0 0 7 5" id="vip-icon">
+		<defs>
+			<lineargradient id="vip-icon_a" x1="50%" x2="50%" y1="100%" y2="-8.227%">
+			<stop offset="0%" stop-color="#FFE571"></stop>
+			<stop offset="100%" stop-color="#FFFAE4"></stop>
+			</lineargradient>
+		</defs>
+		<path fill="url(#vip-icon_a)" fill-rule="evenodd" d="M6.262 3.002L4.5 1 2.737 3.002 1.154 2.1a.1.1 0 0 0-.148.101l.544 3.714a.1.1 0 0 0 .1.086h5.7a.1.1 0 0 0 .099-.085L7.994 2.2a.1.1 0 0 0-.148-.101l-1.584.903z" transform="translate(-1 -1)"></path>
+		</symbol>
+		<symbol viewbox="0 0 13 13" id="icon-warn">
+		<g fill="none" fill-rule="evenodd">
+			<circle cx="6.5" cy="6.5" r="6.5" fill="#FF5339"></circle>
+			<path fill="#FFF" d="M6 3h1v5H6zM6 9h1v1H6z"></path>
+		</g>
+		</symbol>
+		</defs>
+		</svg>
 
-    <div class="app-1TQsf_1">
-      <div class="app-dps8r_1">
-        <div>
-          <div class="shop-header-3Zr-_">
-        <nav class="shop-header-1fspV shop-header-1swXn">
-         <a href="javascript:;">
-          <svg>
-           <use xlink:href="#arrow-left"></use>
-          </svg></a>
-        </nav>
-        <div class="shop-header-1wVeP">
-          <img class="shop-header-2hPPi" :src="'http://localhost:8090/api/image/'+restaurant.image_path" />
-           <div class="shop-header-2EhEt">
-            <h2 class="shop-header-3df9k"><span class="mini-tag-1Lyw4 shop-header-2D_B8">品牌<span class="shop-header-3O-AN mini-tag-1ezSQ">品牌</span></span><span class="shop-header-3pPdD">{{restaurant.name}}</span><i class="shop-header-2iVYi"></i></h2>
-            <div class="shop-header-1SsQo">
-             <span class="shop-header-qCsXg">{{restaurant.rating}}</span>
-             <span class="shop-header-qCsXg">月售{{restaurant.recent_order_num}}单</span>
-             <span class="shop-header-qCsXg">蜂鸟快送 <span>约31分钟</span></span>
-             <span class="shop-header-qCsXg">距离2.1km</span>
-            </div>
-            <p class="shop-header-2JWG_">因爱而生，专注做粥，只为给你更好的，我们一直在用心！</p>
-           </div>
-          </div>
-          <div ubt-click="101178" class="shop-header-2GBKf">
-           <div class="shop-header-3clEd">
-            <div class="activity-1hPHa activity-2JHFT">
-             <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(112, 188, 70);">首单<span class="activity-yP-9y mini-tag-1ezSQ">首单</span></span>
-             <span class="activity-3dUjU">新用户下单立减17元(不与其它活动同享)</span>
-            </div>
-           </div>
-           <div class="shop-header-2yEPX">
-             6个优惠
-           </div>
-          </div>
-          <div class="shop-header-18anF"></div>
-         </div>
-        </div>
-        <div class="shop-tab-1MgBk">
-          <div class="shop-tab-2ipt1 shop-tab-nD6jp">
-           <span class="shop-tab-2H0qT">点餐</span>
-          </div>
-          <div class="shop-tab-2ipt1">
-           <span class="shop-tab-2H0qT">评价</span>
-          </div>
-          <div class="shop-tab-2ipt1">
-           <span class="shop-tab-2H0qT">商家</span>
-          </div>
-         </div>
-         <div>
-           <div class="menuview-menuview_2hUkG" style="height: 1252px;">
-             <div class="menuview-menuviewNodata_2iJo3" style="display: none;">
-              <img src="img/no-food.png" />
-              <p>没有商品</p>
-              <p>该商家还未上传商品</p>
-             </div>
-             <div class="menuview-menuviewMain_17K3g">
-               <main class="menuview-main_i6fQ3">
-                 <ul class="menucategory-category_29kyE menuview-menuNav_2_lFf">
-                   <li role="button" aria-label="热销" class="menucategory-active_JnDmc menucategory-hasicon_2MBNs menucategory-categoryItem_3e27M">
-                   <!----> <img class="menucategory-categoryIcon_375ij" src="static/img/05b267f338acfeb8bd682d16e836dpng.png" /> <span class="menucategory-categoryName_qwsbd">热销</span></li>
-                 </ul>
-                 <section data-v-f433384a="" class="container menuview-menuList_JqDMu">
-                   <div data-v-f433384a="" class="scroller">
-                     <dl data-v-f433384a="" role="menu">
-                       <dt data-v-f433384a="" role="heading" aria-label="热销，大家喜欢吃，才叫真好吃。">
-                         <div data-v-f433384a="" class="category-title">
-                          <strong data-v-f433384a="" class="category-name">热销</strong>
-                          <span data-v-f433384a="" class="category-desc">大家喜欢吃，才叫真好吃。</span>
-                         </div>
-                         <!---->
-                        </dt>
-                        <dd data-v-f433384a="" aria-label="️️❤皮蛋瘦肉粥，原价15元，现价15元。" role="menuitem" class="">
-                         <div data-v-f433384a="" class="fooddetails-root_2HoY2">
-                          <span class="fooddetails-logo_2Q0S7"><span class="attrTag-attrTag_2f7Ms_0 mini-tag-tag_1I2lF_0 fooddetails-attrTag_2TNes">招牌<span class="attrTag-attrGhost_q-Hwj_0 mini-tag-ghost_2_w2f_0">招牌</span></span> <img alt="️️❤皮蛋瘦肉粥" title="️️❤皮蛋瘦肉粥" src="img/2c5ff7ef641e54a50888d349d3f17jpeg.jpeg" /></span>
-                          <section class="fooddetails-info_1fBtn">
-                           <p class="fooddetails-name_P4hpW">
-                            <!----> ️️❤皮蛋瘦肉粥
-                            <!----></p>
-                           <!---->
-                           <p class="fooddetails-sales_1ETVq"><span>月售33份</span> <span>好评率100%</span></p>
-                           <div class="fooddetails-activityRow_1FKti">
-                            <!---->
-                            <!---->
-                           </div>
-                           <strong class="salesInfo-price_3_oc1_0 fooddetails-salesInfo_MPG41"><span>15</span>
-                            <!---->
-                            <!----></strong>
-                           <div class="fooddetails-button_RwKqC">
-                            <span>
-                             <!----> <span class="cartbutton-entitybutton_2u6UF">
-                              <!---->
-                              <!----> <a href="javascript:" role="button" aria-label="添加商品">
-                               <svg>
-                                <use xlink:href="#cart-minus"></use>
-                               </svg></a></span></span>
-                           </div>
-                          </section>
-                         </div>
-                        </dd>
-                     </dl>
-                   </div>
-                   <div data-v-f433384a="" class="specpanel-container_28FLy">
-                     <div class="specpanel-specpanel_3CRhf" style="display: none;">
-                      <h1></h1>
-                      <div class="specpanel-candidators_IUXBF">
-                      </div>
-                      <div class="specpanel-selectedresult_3-qgQ">
-                       <p class="specpanel-price_2fywH"><small class="specpanel-yen_dt8UU">&yen;</small> <span class="specpanel-now_PGE8E">0</span> <small class="specpanel-extratext_GKpVd">起</small></p>
-                       <div>
-                        <!---->
-                        <button type="button" class="specpanel-cartadd_3b5FJ specpanel-disabled_1T-EE">选好了</button>
-                       </div>
-                      </div>
-                      <a href="javascript:" role="button" aria-label="关闭" class="specpanel-close_2TIOf"></a>
-                     </div>
-                     <div class="specpanel-layer_1vL1r" style="display: none;"></div>
-                    </div>
-                 </section>
-               </main>
-               <div>
-                 <button type="button" class="menuview-essentialTip_2S-dD" style="display: none;">去点必选品</button>
-                 <footer class="cartview-cartview_xUNA6">
-                  <div class="cartview-cartmask_3rV-M" style="z-index: 10; display: none;"></div>
-                  <div class="cartview-cartbody_15r9z" style="z-index: 11;">
-                   <section class="discount-tip-discountTip_1IcZ7_0" style="">
-                    满25减15，满49减17，满79减20
-                   </section>
-                   <div style="opacity: 0;">
-                    <div class="cartview-cartheader_342ET">
-                     <div class="cartview-headerText_3abxn">
-                      <span class="cartview-title_2uj0T">已选商品</span>
-                      <!---->
-                      <!---->
-                     </div>
-                     <a href="javascript:" ubt-click="101179" class="cartview-cartheaderRemove_2WfO3">
-                      <svg>
-                       <use xlink:href="#cart-remove"></use>
-                      </svg> <span>清空</span></a>
-                    </div>
-                    <div class="entityList-cartbodyScroller_GxeX__0">
-                     <!---->
-                     <ul></ul>
-                     <!---->
-                    </div>
-                   </div>
-                  </div>
-                  <div class="bottomNav-cartfooter_1qvQh_0" style="z-index: 11;">
-                   <span role="button" aria-label="购物车" attr-quantity="0" class="bottomNav-carticon_2xfrl_0 bottomNav-empty_-atZ2_0"></span>
-                   <div role="button" aria-label="购物车有商品0件，共0元，配送费&amp;yen;2.5。" class="bottomNav-cartInfo_135aa_0">
-                    <p class="bottomNav-carttotal_1nOFY_0"><span>&yen;0</span>
-                     <!----></p>
-                    <p class="bottomNav-cartdelivery_Gsj2c_0">配送费&yen;2.5</p>
-                   </div>
-                   <a role="button" href="javascript:;" class="submit-btn-submitbutton_1dW2t_0 submit-btn-disabled_3y1tV_0"><span>&yen;20起送</span></a>
-                  </div>
-                 </footer>
-                 <!---->
-                </div>
-             </div>
-           </div>
-         </div>
-         <div class="index-AcI9j" style="display: none; height: 1252px;">
-           <section class="overview-1l9Fd">
-             <div class="overview-1B6sE">
-             <strong class="overview-kSMyE">4.8</strong>
-             <p class="overview-1SY0_">综合评价</p>
-             <p class="overview-1rZNb">高于周边商家55.0%</p>
-            </div>
-            <div class="overview-__cAg">
-              <div class="overview-3hlIX">
-                <span>服务态度</span>
-                <span class="overview-3LAY5">
-                 <div class="Rating-wrapper_TYbDrku_0">
-                  <div class="Rating-gray_1kpffd5_0">
-                   <svg>
-                    <use xlink:href="#star-gray.cc081b9"></use>
-                   </svg>
-                  </div>
-                  <div class="Rating-actived_GBtiHkB_0" style="width: 100%;">
-                   <svg>
-                    <use xlink:href="#star-actived.d4c54d1"></use>
-                   </svg>
-                  </div>
-                 </div><span class="overview-qiEAZ">5.0</span></span>
-               </div>
-               <div class="overview-3hlIX">
-              <span>菜品评价</span>
-              <span class="overview-3LAY5">
-               <div class="Rating-wrapper_TYbDrku_0">
-                <div class="Rating-gray_1kpffd5_0">
-                 <svg>
-                  <use xlink:href="#star-gray.cc081b9"></use>
-                 </svg>
-                </div>
-                <div class="Rating-actived_GBtiHkB_0" style="width: 87.3842%;">
-                 <svg>
-                  <use xlink:href="#star-actived.d4c54d1"></use>
-                 </svg>
-                </div>
-               </div><span class="overview-qiEAZ">4.4</span></span>
-             </div>
-             <div class="overview-3hlIX">
-              <span>送达时间</span>
-              <span class="overview-3LAY5"> 39分钟 </span>
-             </div>
-            </div>
-           </section>
-           <section class="index-1g1Lf">
-             <div class="index-2Rigr">
-             <ul>
-              <li class="rating-tags-WjcH0 rating-tags-ij9uM"> 全部(656) </li>
-              <li class="rating-tags-WjcH0"> 满意(651) </li>
-              <li class="rating-tags-WjcH0 rating-tags-3HD7u"> 不满意(5) </li>
-              <li class="rating-tags-WjcH0"> 有图(26) </li>
-             </ul>
-            </div>
-            <ul infinite-scroll-distance="20">
-              <li class="index-RD5RX">
-              <div class="comment-block-Mh_9k">
-               <img class="comment-block-2pM7h" src="img/d0b0f2fc83f3ac3e4a0cfae891256png.png" />
-               <div class="comment-block-3ul4F">
-                <div class="comment-block-hOaYf">
-                 <h3 class="comment-block-2u8__">菜***子</h3>
-                 <small class="comment-block-2lqfX">2018-03-09</small>
-                </div>
-                <div>
-                 <div class="Rating-wrapper_TYbDrku_0">
-                  <div class="Rating-gray_1kpffd5_0">
-                   <svg>
-                    <use xlink:href="#star-gray.cc081b9"></use>
-                   </svg>
-                  </div>
-                  <div class="Rating-actived_GBtiHkB_0" style="width: 100%;">
-                   <svg>
-                    <use xlink:href="#star-actived.d4c54d1"></use>
-                   </svg>
-                  </div>
-                 </div>
-                 <span class="comment-block-rYfog">30分钟送达</span>
-                </div>
-                <!---->
-                <!---->
-                <!---->
-                <div>
-                 <ul class="comment-block-3fd0V">
-                  <li>南瓜粥+韭菜盒子+蒸饺+萝卜干</li>
-                  <li>茶叶蛋</li>
-                  <li>黑米糕</li>
-                 </ul>
-                </div>
-               </div>
-              </div></li>
-            </ul>
-           </section>
-         </div>
-         <div data-v-55b29b2f="" class="shop-info" style="display: none; height: 1252px;">
-           <section data-v-55b29b2f="" class="section">
-            <h3 class="section-title">配送信息</h3>
-            <div class="delivery-36amC">
-             <div>
-              <!---->
-              <span>由蜂鸟快送提供配送，约31分钟送达，距离2.1km</span>
-             </div>
-             <!---->
-             <div>
-              配送费￥2.5
-             </div>
-            </div>
-           </section>
-           <section data-v-55b29b2f="" class="section">
-            <h3 class="section-title">活动与服务</h3>
-            <div class="activity-2iOA8">
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(112, 188, 70);">首单<span class="activity-yP-9y mini-tag-1ezSQ">首单</span></span>
-              <span class="activity-3dUjU">新用户下单立减17元(不与其它活动同享)</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(240, 115, 115);">满减<span class="activity-yP-9y mini-tag-1ezSQ">满减</span></span>
-              <span class="activity-3dUjU">满25减15，满49减17，满79减20</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(240, 115, 115);">折扣<span class="activity-yP-9y mini-tag-1ezSQ">折扣</span></span>
-              <span class="activity-3dUjU">3.6折暖胃清火白粥</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(240, 115, 115);">折扣<span class="activity-yP-9y mini-tag-1ezSQ">折扣</span></span>
-              <span class="activity-3dUjU">5.3折钜惠精致套餐</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(60, 199, 145);">满赠<span class="activity-yP-9y mini-tag-1ezSQ">满赠</span></span>
-              <span class="activity-3dUjU">满59元赠送小菜1份</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="background-color: rgb(255, 114, 57);">返券<span class="activity-yP-9y mini-tag-1ezSQ">返券</span></span>
-              <span class="activity-3dUjU">下单可返3元代金券</span>
-             </div>
-             <div class="activity-1hPHa activity-25cwN">
-              <span class="mini-tag-1Lyw4 activity-N5WvH" style="border: 1px solid rgb(153, 153, 153); color: rgb(153, 153, 153);">票<span class="activity-yP-9y mini-tag-1ezSQ">票</span></span>
-              <span class="activity-3dUjU">该商家支持开发票，开票订单金额100元起，请在下单时填写好发票抬头</span>
-             </div>
-            </div>
-           </section>
-           <section data-v-55b29b2f="" class="section album-1cjk_">
-            <h3 class="section-title">商家实景</h3>
-            <div class="album-1pGkG">
-             <a href="javascript:"><img src="img/5cbf7189df51aa02b9e379ac7b43cjpeg.jpeg" /><span class="album-2vPHW">门面(1张)</span></a>
-             <a href="javascript:"><img src="img/123fc50c5519524601dc2cf7bfc81jpeg.jpeg" /><span class="album-2vPHW">大堂(1张)</span></a>
-            </div>
-           </section>
-           <div data-v-55b29b2f="">
-            <section class="section">
-             <h3 class="section-title">商家信息</h3>
-             <ul class="detail-1_W84">
-              <li>因爱而生，专注做粥，只为给你更好的，我们一直在用心！</li>
-              <li><span>品类</span><span>包子粥店, 简餐</span></li>
-              <li><span>商家电话</span><span><span>13356003920</span>
-                <svg class="arrow-right">
-                 <use xlink:href="#arrow-right"></use>
-                </svg></span></li>
-              <li><span>地址</span><span>浙江省嘉兴市兴业街店面23号</span></li>
-              <li><span>营业时间</span><span>07:30-21:30</span></li>
-             </ul>
-            </section>
-            <section class="section">
-             <a href="https://h5.ele.me/shop/certification/#/?restaurant_id=1352564764536131" class="section-title detail-1wFyo">营业资质
-              <svg class="arrow-right">
-               <use xlink:href="#arrow-right"></use>
-              </svg></a>
-            </section>
-           </div>
-         </div>
-      </div>
-    </div>
-  </div>
+		<div class="app-1TQsf_1">
+		<div class="app-dps8r_1">
+			<shopHeader :restaurant="restaurant"></shopHeader>
+			<div class="shop-tab-1MgBk">
+			<div v-for="title,index in head_titles" :key="index" :class="now==index?'shop-tab-2ipt1 shop-tab-nD6jp':'shop-tab-2ipt1'" @click="fnTabClick(index)">
+			<span class="shop-tab-2H0qT">{{title}}</span>
+			</div>
+			</div>
+			<menuView :id="id" v-show="now==0"></menuView>
+			<commentView v-show="now==1"></commentView>
+			<infoView v-show="now==2"></infoView>
+		</div>
+		</div>
+	</div>
+  </transition>
 </template>
 
 <script>
+import shopHeader from '@/components/shop-header'
+import menuView from '@/components/menu-view'
+import commentView from '@/components/comment-view'
+import infoView from '@/components/info-view'
 export default {
   data(){
     return {
-      restaurant: null
-    };
+	  restaurant: null,
+	  head_titles: ['点餐', '评价', '商家'],
+      now: 0
+    }
   },
   async mounted(){
-    let {id}=this.$route.params;
+    let {id,type} = this.$route.params;
 
-    this.restaurant=(await this.axios.get(`restaurant/${id}`)).data;
+	this.restaurant=(await this.axios.get(`restaurant/${id}`)).data;
+
+	this.id = id;
+	this.now = Number(type);
+  },
+  computed:{
+
+  },
+  methods:{
+	  fnTabClick(index){
+		this.now=index;
+		this.$router.replace(`/detail/${this.id}/${index}`)
+	  }
+  },
+  components: {
+	  	shopHeader,
+		menuView,
+		commentView,
+		infoView
   }
 }
 </script>
@@ -1148,8 +854,7 @@ cartlist {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: url(data:image/svg+xml;
-	base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjRkZGIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiMyMDczQzEiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4xIi8+PC9nPjxwYXRoIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjYiIGQ9Ik05LjM3NCAxOC43MjJTNy44NjggMTEuMjgzIDcuMzIzIDguNzFDNi43NzggNi4xMzYgNS44NiA1LjMzIDMuOTc4IDQuNTIgMi4wOTYgMy43MTMuMzY3IDIuMjg2LjM2NyAyLjI4NiIvPjxjaXJjbGUgY3g9IjQ2IiBjeT0iNTEiIHI9IjQiIGZpbGw9IiNGRkYiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjRkZGIi8+PC9nPjwvc3ZnPg==) 50% no-repeat;background-size: .6rem;
+	background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjRkZGIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiMyMDczQzEiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4xIi8+PC9nPjxwYXRoIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjYiIGQ9Ik05LjM3NCAxOC43MjJTNy44NjggMTEuMjgzIDcuMzIzIDguNzFDNi43NzggNi4xMzYgNS44NiA1LjMzIDMuOTc4IDQuNTIgMi4wOTYgMy43MTMuMzY3IDIuMjg2LjM2NyAyLjI4NiIvPjxjaXJjbGUgY3g9IjQ2IiBjeT0iNTEiIHI9IjQiIGZpbGw9IiNGRkYiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjRkZGIi8+PC9nPjwvc3ZnPg==) 50% no-repeat;background-size: .6rem;
 	background-size: 6vw;
 	content: ""
 }
@@ -1162,8 +867,7 @@ cartlist {
 }
 
 .bottomNav-carticon_2xfrl_0.bottomNav-empty_-atZ2_0:before {
-	background-image: url(data:image/svg+xml;
-	base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjNUY1RjYzIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiNFQkVFRjMiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4wNSIvPjwvZz48cGF0aCBzdHJva2U9IiM1RjVGNjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJNOS4zNzQgMTguNzIyUzcuODY4IDExLjI4MyA3LjMyMyA4LjcxQzYuNzc4IDYuMTM2IDUuODYgNS4zMyAzLjk3OCA0LjUyIDIuMDk2IDMuNzEzLjM2NyAyLjI4Ni4zNjcgMi4yODYiLz48Y2lyY2xlIGN4PSI0NiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjNUY1RjYzIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI1MSIgcj0iNCIgZmlsbD0iIzVGNUY2MyIvPjwvZz48L3N2Zz4=)
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjNUY1RjYzIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiNFQkVFRjMiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4wNSIvPjwvZz48cGF0aCBzdHJva2U9IiM1RjVGNjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJNOS4zNzQgMTguNzIyUzcuODY4IDExLjI4MyA3LjMyMyA4LjcxQzYuNzc4IDYuMTM2IDUuODYgNS4zMyAzLjk3OCA0LjUyIDIuMDk2IDMuNzEzLjM2NyAyLjI4Ni4zNjcgMi4yODYiLz48Y2lyY2xlIGN4PSI0NiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjNUY1RjYzIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI1MSIgcj0iNCIgZmlsbD0iIzVGNUY2MyIvPjwvZz48L3N2Zz4=)
 }
 
 .bottomNav-carticon_2xfrl_0.bottomNav-empty_-atZ2_0:after {
@@ -1432,8 +1136,7 @@ dt[data-v-f433384a] {
 	width: .933333rem;
 	width: 9.333333vw;
 	z-index: 2;
-	background: url(data:image/png;
-	base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAAAFhJREFUOBFjYBgFoyEwGgKMs2bN8gQGwyxoUKQBwXZswUKuOhaQ4f///5cBGcrIyAiySBbExgLIUseExSCqCoEsSAO6/AkIg9h4TKe2OjxWjUqNhsDwCgEACvMiGUpibN4AAAAASUVORK5CYII=) 50% no-repeat;background-size: .32rem auto;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAAAFhJREFUOBFjYBgFoyEwGgKMs2bN8gQGwyxoUKQBwXZswUKuOhaQ4f///5cBGcrIyAiySBbExgLIUseExSCqCoEsSAO6/AkIg9h4TKe2OjxWjUqNhsDwCgEACvMiGUpibN4AAAAASUVORK5CYII=) 50% no-repeat;background-size: .32rem auto;
 	background-size: 3.2vw auto
 }
 
@@ -1580,8 +1283,7 @@ dt[data-v-f433384a] {
 	width: 4.666667vw;
 	height: .466667rem;
 	height: 4.666667vw;
-	background: url(data:image/png;
-	base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAvCAYAAAClgknJAAAAAXNSR0IArs4c6QAAAspJREFUaAXNmU9q20AUhy01Bu9LV4VAu88mJ4jpHbxJqcBgnyAkNwgk5AQ2GFRaKD5CoDgnyCYHKBS6Ctkb7Ep5PzHPSBNppNE8/dFmNKPJzPfNPCtv7MFAu1ar1YflcvlJa+68Ciaw6SB+ugEddrvd7yiKHvokARYwgU2X8FiA4al+otr++r5/NpvN/nCfLkqGp7mP1fxPw+Hwy3Q6fUY92YHNZnO03+/vqc7weHbc9U7Qon4GA1gApK4TsK7X63eoJwLj8XhP93ee5/1XnbjoTAIrTyGzIZA0/EAx3k0mk4T1EEIgXiwW51SEcRwndmhTV6vhlBM2CYaCD+bz+U8GywigsWsJG3jwvhHoUsIWvlCgC4k68EaBNiXqwpcKtCHhAl9JoEkJV/jKAk1ISMBbCUhKSMFbC0hISMLXEnCRkIavLVBHogl4JwEbiabgnQWqSKBPTkrMWWUmMUNf2ys3F7IdxJAA/lNjfUyPmZdVpp/b3IsIYEKDRIZHEh4DiwlgsDIJaXjMmTnUo8HlwkGDDkMXBBrnjEOP4ov0YSSnj3WT6A4UvW1SVOInOzGBCvDsISohImCAjxS1HqpiEs4CRfD8gVUCjX1R4CRQBs8fWMPbyXkn9K3lOC0tq8JjICUS0C2HFI/v/L1TLYEieAWYmx5AgsLqm7SEdQiZ4AHIYcNLrJcIJ/p/8J3a9cWrFU5WAq7wLCMpUVlACl5aopKANLykRKlAU/BSEkaBpuElJAoF2oJ3lcgVaBueJWjer3T8DKle+RX7RsAE7/t+QL+Z/eAJmyhtJTICXcPzgthIHAT6Am8rkQj0Dd5GwgvD8P12u32kP8r8Gkj1qI2YZ9ii0hROo9Ho1A+C4IWSsF/aAL2ABxNeGlhIus2k4mBO2BmcEqwbyhIv0bEPK89cXKZ3guBvKeu94meHkiSu0fHQ0LMbsIGxZ1huOK8fLej3ale6/wAAAABJRU5ErkJggg==) no-repeat;background-size: cover
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAvCAYAAAClgknJAAAAAXNSR0IArs4c6QAAAspJREFUaAXNmU9q20AUhy01Bu9LV4VAu88mJ4jpHbxJqcBgnyAkNwgk5AQ2GFRaKD5CoDgnyCYHKBS6Ctkb7Ep5PzHPSBNppNE8/dFmNKPJzPfNPCtv7MFAu1ar1YflcvlJa+68Ciaw6SB+ugEddrvd7yiKHvokARYwgU2X8FiA4al+otr++r5/NpvN/nCfLkqGp7mP1fxPw+Hwy3Q6fUY92YHNZnO03+/vqc7weHbc9U7Qon4GA1gApK4TsK7X63eoJwLj8XhP93ee5/1XnbjoTAIrTyGzIZA0/EAx3k0mk4T1EEIgXiwW51SEcRwndmhTV6vhlBM2CYaCD+bz+U8GywigsWsJG3jwvhHoUsIWvlCgC4k68EaBNiXqwpcKtCHhAl9JoEkJV/jKAk1ISMBbCUhKSMFbC0hISMLXEnCRkIavLVBHogl4JwEbiabgnQWqSKBPTkrMWWUmMUNf2ys3F7IdxJAA/lNjfUyPmZdVpp/b3IsIYEKDRIZHEh4DiwlgsDIJaXjMmTnUo8HlwkGDDkMXBBrnjEOP4ov0YSSnj3WT6A4UvW1SVOInOzGBCvDsISohImCAjxS1HqpiEs4CRfD8gVUCjX1R4CRQBs8fWMPbyXkn9K3lOC0tq8JjICUS0C2HFI/v/L1TLYEieAWYmx5AgsLqm7SEdQiZ4AHIYcNLrJcIJ/p/8J3a9cWrFU5WAq7wLCMpUVlACl5aopKANLykRKlAU/BSEkaBpuElJAoF2oJ3lcgVaBueJWjer3T8DKle+RX7RsAE7/t+QL+Z/eAJmyhtJTICXcPzgthIHAT6Am8rkQj0Dd5GwgvD8P12u32kP8r8Gkj1qI2YZ9ii0hROo9Ho1A+C4IWSsF/aAL2ABxNeGlhIus2k4mBO2BmcEqwbyhIv0bEPK89cXKZ3guBvKeu94meHkiSu0fHQ0LMbsIGxZ1huOK8fLej3ale6/wAAAABJRU5ErkJggg==) no-repeat;background-size: cover
 }
 
 .specpanel-candidators_IUXBF {
@@ -1841,8 +1543,7 @@ dt[data-v-f433384a] {
 	height: 4.533333vw;
 	width: .453333rem;
 	width: 4.533333vw;
-	background: url(data:image/png;
-	base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA7RJREFUWAnVV11oVEcU/s7NdRNjwpJsFAomkZgfRQ2ViFZIQVBEqQhSIpRGUfClEBAhQV+CUVAU3zT0obQolkJFsI9SFS2l2CjSKkSqccX4E2lidteENmuSvXN6bvSaXcydO9leBOdhZ+bOd77z7ZlzZ84FPsjWvT6Gk5/Ofx/arUAnJ9ZtQGp8AGnreiA2BIBe0NcbapDOXIRNhSieU4vuTWtD8KmlsLWrqfGLKCAbJYVpELpRTHEtPoRFvSCHF6M0AhAdQ9vlwyH4C6TQbxmxksgA1vvJH1etXpBVMARHAQ6igX8tJIBekI07yLBsmWoMyV8gjV4Q8B0yjkuyKpApJIBe0P5fL0DxJBjNuNalfwFCEhTsxLZ6MZFZid6e5pGapQOS55bDcwfL+m+/DElDDo0+QgJtTKgrIgjLh8Yu79kY7Tu9tPieUv8ODlfVf89NTXNy2EKYaAUlK2tPRSadDtgWehdE7PPLSrBvfRSjEYqAVWtyeHRvCBpyKHy3LFHVsP14U3HbrVgBUCSBYIaVnsSWB2mUjstR4DbGmteD8H59BQGqpeKVQtmEHENDY6gbddB58x80Pxuf9s6on56EM3LP4RlborLuBoNXz7j45iERTZSXRkrp7l2RHU7zzyHiTJALZo6kRidD3TZfQXI+vwgS5K4rwmcmOFOMryC55v4yI+Gd3NIimR9O8xVEjNtGLpg/St348wsjrAHIV1ChHflFMn7qIgvikRPhCC9aVxSEM1n3FVTyqHdQCrOrJiSSb1VJNXDYBBuE8RXkGhLhTBDB23Xm9lRlw9a38zwHWkFlu7/8USrGWybcU1UTOWdfVjb8r1LF92D0RCSql6yFyvwmDrXiPbxEdQRkb449vve792w2faATl1husU5TUknwKCvn0nB1/TZTm2xcYIQ8cKKq9pw42+7NTXr5t91lhWineDzrAtRbBkbIMy+fH20l0E/e3KSXmqAtMUF3ZhMt4wi5AtyCLPVi5FvF2GkiKAdD+ANknZ6r6MK8p/ef56xlTWYlyLNLVtd1yBfbUakGNOWLh363l0gPyEsSJ+K/CdbV8id933iovAS5xolFtZ+wg7MyrPPI8uqJfqh48qDVszXOIc/A62P98Z5YwcJGi3BA6iLDi9izlp7ooQX6Kva4b0fW06kP5ex53uNkzZIVnFGfM9TH4q1BQr9Y6qWpjwDZIvnc5H55FhePPXKi/Vy+q/UmdXW9qYWn3ea9ZdMUM49EDOHQodf8Bw+yRFHS5gNs/wHNcRQy4ri8mQAAAABJRU5ErkJggg==) no-repeat;background-size: .346667rem;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA7RJREFUWAnVV11oVEcU/s7NdRNjwpJsFAomkZgfRQ2ViFZIQVBEqQhSIpRGUfClEBAhQV+CUVAU3zT0obQolkJFsI9SFS2l2CjSKkSqccX4E2lidteENmuSvXN6bvSaXcydO9leBOdhZ+bOd77z7ZlzZ84FPsjWvT6Gk5/Ofx/arUAnJ9ZtQGp8AGnreiA2BIBe0NcbapDOXIRNhSieU4vuTWtD8KmlsLWrqfGLKCAbJYVpELpRTHEtPoRFvSCHF6M0AhAdQ9vlwyH4C6TQbxmxksgA1vvJH1etXpBVMARHAQ6igX8tJIBekI07yLBsmWoMyV8gjV4Q8B0yjkuyKpApJIBe0P5fL0DxJBjNuNalfwFCEhTsxLZ6MZFZid6e5pGapQOS55bDcwfL+m+/DElDDo0+QgJtTKgrIgjLh8Yu79kY7Tu9tPieUv8ODlfVf89NTXNy2EKYaAUlK2tPRSadDtgWehdE7PPLSrBvfRSjEYqAVWtyeHRvCBpyKHy3LFHVsP14U3HbrVgBUCSBYIaVnsSWB2mUjstR4DbGmteD8H59BQGqpeKVQtmEHENDY6gbddB58x80Pxuf9s6on56EM3LP4RlborLuBoNXz7j45iERTZSXRkrp7l2RHU7zzyHiTJALZo6kRidD3TZfQXI+vwgS5K4rwmcmOFOMryC55v4yI+Gd3NIimR9O8xVEjNtGLpg/St348wsjrAHIV1ChHflFMn7qIgvikRPhCC9aVxSEM1n3FVTyqHdQCrOrJiSSb1VJNXDYBBuE8RXkGhLhTBDB23Xm9lRlw9a38zwHWkFlu7/8USrGWybcU1UTOWdfVjb8r1LF92D0RCSql6yFyvwmDrXiPbxEdQRkb449vve792w2faATl1husU5TUknwKCvn0nB1/TZTm2xcYIQ8cKKq9pw42+7NTXr5t91lhWineDzrAtRbBkbIMy+fH20l0E/e3KSXmqAtMUF3ZhMt4wi5AtyCLPVi5FvF2GkiKAdD+ANknZ6r6MK8p/ef56xlTWYlyLNLVtd1yBfbUakGNOWLh363l0gPyEsSJ+K/CdbV8id933iovAS5xolFtZ+wg7MyrPPI8uqJfqh48qDVszXOIc/A62P98Z5YwcJGi3BA6iLDi9izlp7ooQX6Kva4b0fW06kP5ex53uNkzZIVnFGfM9TH4q1BQr9Y6qWpjwDZIvnc5H55FhePPXKi/Vy+q/UmdXW9qYWn3ea9ZdMUM49EDOHQodf8Bw+yRFHS5gNs/wHNcRQy4ri8mQAAAABJRU5ErkJggg==) no-repeat;background-size: .346667rem;
 	background-size: 3.466667vw;
 	background-position: 100%
 }

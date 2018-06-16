@@ -154,7 +154,9 @@
      推荐商家
     </div>
     <section class="shoplist">
-      <listItem v-for="data in arr" :key="data.restaurant_id" :restaurant="data"></listItem>
+      <transition-group name="fadeLeft"> 
+        <listItem v-for="data in arr" :key="data.restaurant_id" :restaurant="data"></listItem>
+      </transition-group> 
     </section>
     <footer class="index-wrapper_1Rsz2pX">
      <div class="index-footer_Gtduid_">
@@ -190,10 +192,19 @@ export default {
   },
   methods: {
     async loadPage(page=0){
-      return (await this.axios.get(`restaurant/${page}/8/`)).data;
+      let headers = {};
+      if(this.$store.state.token){
+          headers['x-token'] = this.$store.state.token;
+      }  
+      return (await this.axios.get(`restaurant/${page}/8/`,{
+         headers
+      })).data;
     }
   },
   components: {listItem},
+  async created(){
+      console.log(localStorage.token)
+  },
   async mounted(){
     this.arr=await this.loadPage(0);
   }

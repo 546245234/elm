@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form class="" action="/reg" method="get">
+        <span>用户：</span>
+        <input type="text" name="user">
+        <br>
+        <span>密码：</span>
+        <input type="password" name="pass" value="">
+        <br>
+        <span>验证码：</span>
+        <input type="text" name="verfi" value="">
+        <img src="/verfi_code?w=100&h=40" alt="" onclick="this.src='/verfi_code?w=100&h=40&t='+Math.random()">
+        <br>
+        <input type="submit" name="" value="注册">
+    </form>
+</body>
+</html>

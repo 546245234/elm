@@ -10,7 +10,7 @@
     <!---->
    </div>
    <div class="index-main_N3FfcSz">
-    <section class="index-line_2-iYR1A" @click="gotoDetail(restaurant.restaurant_id)">
+    <section class="index-line_2-iYR1A" @click="gotoDetail(restaurant.restaurant_id,1)">
      <h3 class="index-shopname_39Y7e3U"><i content="品牌" class="index-premium_39rl0v9">品牌</i> <span>{{restaurant.name}}</span></h3>
      <ul class="index-supportWrap_2lTcxr2">
       <!---->
@@ -77,7 +77,7 @@ export default {
   props: ['restaurant'],
   methods: {
     gotoDetail(id){
-      router.push(`/detail/${id}/`);
+      router.push(`/detail/${id}/1`);
     }
   },
   filters: {
@@ -86,10 +86,6 @@ export default {
     },
     cn_time (time) {
       return time<60?`${time}分钟`:`${Math.floor(time/60)}小时 ${time%60}分钟`;
-    },
-    img_cut(imgPath){
-      var str = imgPath.replace(/jpeg/gi,'.jpeg');
-      return str;
     }
   }
 }
