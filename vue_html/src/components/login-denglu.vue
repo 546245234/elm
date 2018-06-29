@@ -44,13 +44,14 @@ export default {
         if(json.OK){
           alert('登陆成功');
           this.$store.dispatch('updateUser', this.username);
-          router.replace('/');
+          this.$router.replace('/');
 
         }else{
           alert('登录失败，'+json.msg);
         }
 
       }catch(e){
+        console.log(e);
         alert('网络不通，请重试');
       }
     }

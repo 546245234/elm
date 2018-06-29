@@ -61,7 +61,7 @@ router.get('menu/:restaurant_id/',async ctx=>{
 })
 
 //cart
-router.post('cart/:item_id/:count/',async ctx=>{
+router.get('cart/:item_id/:count/',async ctx=>{
 	
 	if (!ctx.token) {
 		ctx.status = 400;
@@ -93,6 +93,7 @@ router.post('cart/:item_id/:count/',async ctx=>{
 				count: Number(row.count) + Number(count)
 			});
 		}
+		ctx.body = {OK:true}
 	}
 })
 
@@ -142,7 +143,9 @@ router.post('user/', async ctx => {
 	let {username,password,code} = ctx.request.fields;
 	// console.log(code.toLowerCase())
 	// console.log(ctx.session.get(ctx.token, 'code'))
-	if (ctx.session.get(ctx.token, 'code') != code.toLowerCase()) {
+	let sessionCode = await ctx.session.get(ctx.token, 'code');
+
+	if (sessionCode != code.toLowerCase()) {
 		ctx.body = {
 			OK: false,
 			msg: '验证码不对'
@@ -173,14 +176,29 @@ router.post('user/', async ctx => {
 //登陆
 router.get('user/:username/:password',async ctx=>{
 	let {username,password} = ctx.params;
-	let rows = await db.select('user_table', '*', {
+	let datas = await db.select('user_table', '*', {
 		username: username.toLowerCase()
 	});
 
-	if(rows.length == 0){
+	if (datas.length == 0) {
 		ctx.body={OK:false,msg:'用户名不存在'};
-	}else if(row[0].password != password){
+	}else if(datas[0].password != password){
 		ctx.body={OK:false,msg:'用户名或密码有误'}
+	}else{
+
+		let datas2 = await db.select('token_table','ID',{
+			token:ctx.token
+		})
+
+		let user_ID = datas[0].ID;
+		let token_ID = datas2[0].ID;
+
+		await db.update('token_table', token_ID, {user_ID});
+
+		ctx.body = {
+			OK: true,
+			msg: '登陆成功'
+		};
 	}
 
 })
@@ -202,8 +220,8 @@ router.get('verfi_code', async ctx => {
 		token,
 	} = ctx.request.query;
 	ctx.response.body = await verfi(w, h, code);
-	
-	ctx.session.set(token, 'code', code.toLowerCase());
+
+	await ctx.session.set(token, 'code', code.toLowerCase());
 	
 })
 

@@ -18,7 +18,8 @@ Vue.prototype.axios = axios.create({
 const store = new Vuex.Store({
   strict: true, //强制全用mutation完成修改——如果在mutation之外修改报错
   state:{
-    token:null
+    token:null,
+    cur_user:null
   },
   mutations:{
     updateToken(state,arg){
@@ -27,11 +28,17 @@ const store = new Vuex.Store({
       }else{
         state.token = arg;
       }
+    },
+    updateUser(state,arg){
+      state.cur_user = arg;
     }
   },
   actions:{
     updateToken({commit,state},arg){
       commit('updateToken',arg)
+    },
+    updateUser({commit,state},arg){
+      commit('updateUser',arg)
     }
   },
   getters:{

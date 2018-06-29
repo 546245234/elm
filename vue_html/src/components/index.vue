@@ -207,6 +207,11 @@ export default {
   },
   async mounted(){
     this.arr=await this.loadPage(0);
+  },
+  computed: {
+      user(){
+          return this.$store.state.cur_user || ''
+      }
   }
 }
 </script>

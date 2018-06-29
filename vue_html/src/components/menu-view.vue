@@ -138,8 +138,26 @@ export default {
             // document.querySelector('.scroller').scrollTop=document.querySelectorAll('.scroller dl')[index].offsetTop;
             this.scroll.scrollToElement('.item' + index);
         },
-        addCart(food_id){
-          console.log(food_id);
+        async addCart(food_id){
+          try{
+            let headers = {};
+
+            if(this.$store.state.token){
+              headers['x-token'] = this.$store.state.token;
+            }
+
+            let json=(await this.axios.get(`/cart/${food_id}/1/`, {headers})).data;
+
+            if(json.OK){
+              alert('添加成功');
+            }else{
+              alert('添加失败');
+            }
+
+          }catch(e){
+            console.log(e);
+            alert('网络不通，请重试');
+          }
         }
     },
     async mounted(){
@@ -158,7 +176,8 @@ export default {
 
       this.$nextTick(() => { 
         this.scroll = new Bscroll(this.$refs.wrapper2, {
-          probeType:3
+          probeType:3,
+          click:true
         });
 
         let foodList = this.$refs.wrapper2.getElementsByClassName('item'); 
